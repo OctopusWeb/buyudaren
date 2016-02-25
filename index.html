@@ -16,11 +16,36 @@
 		
 		<style>
 			body,html{width: 100%;height: 100%;position: relative;}
-			#top{width: 100%;background: #404040;height: 60px;position: relative;}
-			#top h1{width: 100%;text-align: center;line-height: 60px;font-size: 16px}
-			#top img{height: 20px;position: absolute;margin-left: 10px;margin-top: 20px;cursor: pointer;}
-			#content{width: 96%;margin-left: 2%;height: 2000px;background: #000;}
-			#content #shop_show img{width: 30px;}
+			#wrapper{max-width: 770px;margin: 0 auto;width: 96%;}
+			#top{width: 100%;background: #404040;height: auto;position: relative;float: left;padding: 3% 0;}
+			#top h1{width: 100%;text-align: center;line-height: 4vw;font-size:4vw;float: left;}
+			#top img{height: 50%;position: absolute;margin-left: 10px;top: 25%;cursor: pointer;}
+			#content{width: 100%;height: auto;float: left;}
+			#content #shop_show{width: 100%;height: auto;background: #fff;float: left;}
+			#content #shop_show img{width: 25%;margin: 4%;float: left;}
+			#content #logo_info{float: left;width: 66%;float: left;}
+			#content #logo_info h1{font-size: 2.5vw;margin-top: 8%;margin-left: 3%;float: left;color: #404040;}
+			#content #logo_info h2{font-size: 1vw;background: green;float: left;border-radius: 20px;
+									margin-top: 10%;margin-left: 1%;padding: 0% 4%;}
+			#content #logo_info #star{width: 100%;float: left;margin-left: 3%;margin-top: 1%;}
+			#content #logo_info #star img{width: 5%;margin: 3px;}
+			#content #logo_info h3{float: left;color: gray;margin-left: 4%;margin-top: 1%;font-size: 2vw;}
+			#content #logo_info #3w{float: left;}
+			#download{float: left;width: 100%;background: #008000;cursor: pointer;}
+			#download img{width: 40%;margin-left: 30%;padding: 1% 0;}
+			
+			#show_more{width: 100%;float: left;overflow: hidden;}
+			#show_more #img_ul{width: 400%;float: left;}
+			#show_more #img_ul img{width: 15%;}
+			#show_more .conteng_ul{width: 100%;float: left;margin-top: 3%;}
+			#show_more .conteng_ul li{float: left;width: 100%;}
+			#show_more .conteng_ul li img{float: left;margin-top: 1%;margin-right: 2%;width: 3%;}
+			#show_more .conteng_ul li p{font-size: 2vw;color: #404040;float: left;}
+			#show_more #tese{width: 100%;background: #ccc;float: left;font-size: 2vw;margin: 2% 0;}
+			#show_more #tese h3{color: #404040;padding: 3%;text-shadow: #fff 1px 1px;}
+			
+			#foot{width: 100%;background: #404040;float: left;margin-top: 3%;}
+			#foot p{text-align: center;font-size: 1.5vw;padding: 2% 0;}
 		</style>
 	</head>
 	<body>
@@ -29,12 +54,35 @@
 			<div id="content">
 				<div id="shop_show">
 					<img src="img/qpby_v2.jpg"/>
-					<div id="logo_"></div>
+					<div id="logo_info">
+						<h1>夺宝捕鱼（赢iPhone6S）</h1><h2>39MB</h2>
+						<div id="star"><img src="img/start.jpg"/><img src="img/start.jpg"/><img src="img/start.jpg"/><img src="img/start.jpg"/><img src="img/start.jpg"/></div>
+						<h3>已有70万+人下载</h3>
+						<div id="3w"></div>
+					</div>
 				</div>
-				<div id="download"></div>
-				<div id="show_more"></div>
+				<div id="download"><img src="img/img_download.jpg"/></div>
+				<div id="show_more">
+					<ul id="img_ul">
+						<img src="img/wwby_01_v1.jpg"/>
+						<img src="img/wwby_01_v1.jpg"/>
+						<img src="img/wwby_01_v1.jpg"/>
+						<img src="img/wwby_01_v1.jpg"/>
+					</ul>
+					<ul class="conteng_ul">
+						<li><img src="img/yuan_list.jpg"/><p>注册就送2张夺宝卡</p></li>
+						<li><img src="img/yuan_list.jpg"/><p>注册就送2张夺宝卡</p></li>
+						<li><img src="img/yuan_list.jpg"/><p>注册就送2张夺宝卡</p></li>
+					</ul>
+					<div id="tese"><h3>游戏特色</h3></div>
+					<ul class="conteng_ul">
+						<li><img src="img/yuan_list.jpg"/><p>注册就送2张夺宝卡</p></li>
+						<li><img src="img/yuan_list.jpg"/><p>注册就送2张夺宝卡</p></li>
+						<li><img src="img/yuan_list.jpg"/><p>注册就送2张夺宝卡</p></li>
+					</ul>
+				</div>
 			</div>
-			<div id="foot"></div>
+			<div id="foot"><p>粤ICP备14093216号-1 <br /> Copyright©2016 广州动享网络科技有限公司所有</p></div>
 		</div>
 	</body>
 </html>
