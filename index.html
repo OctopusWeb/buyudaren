@@ -13,62 +13,103 @@
 		<title>捕鱼达人</title>
 		<link rel="stylesheet" href="css/reset.css" />
 		<script type="text/javascript" src="//cdn.bootcss.com/jquery/1.12.0/jquery.min.js"></script>
+		<script src="js/touchwipe.js"></script>
+		
+		<script type="text/javascript">
+			$(function(){
+				$("#img_ul").touchwipe({
+					wipeLeft:function(){imgmove("-=120%")},
+					wipeRight:function(){imgmove("+=120%")},
+					preventDefaultEvents:false
+				})
+				function imgmove(num){
+					$("#img_ul").css({"margin-left":num});
+					if(parseInt($("#img_ul").css("margin-left"))>=0){
+						$("#img_ul").css({"margin-left":0})
+					}else if(parseInt($("#img_ul").css("margin-left"))<=-parseInt($("#img_ul li").css("width"))*4){
+						$("#img_ul").css({"margin-left":-parseInt($("#img_ul li").css("width"))*3})
+					}else{
+						
+					}
+					
+					
+				}
+			})
+		</script>
 		
 		<style>
+			/*一下布局方式均以百分比布局，为实现自适应宽度，字体使用css3的vw宽度设置*/
+			/*body html整体定位方式宽度设置*/
 			body,html{width: 100%;height: 100%;position: relative;}
 			#wrapper{max-width: 770px;margin: 0 auto;width: 96%;}
+			/*头部布局方式设置*/
 			#top{width: 100%;background: #404040;height: auto;position: relative;float: left;padding: 3% 0;}
 			#top h1{width: 100%;text-align: center;line-height: 4vw;font-size:4vw;float: left;}
 			#top img{height: 50%;position: absolute;margin-left: 10px;top: 25%;cursor: pointer;}
+			/*内容区域宽度布局设置*/
 			#content{width: 100%;height: auto;float: left;}
+			/*内容区域产品信息布局宽度设置*/
 			#content #shop_show{width: 100%;height: auto;background: #fff;float: left;}
 			#content #shop_show img{width: 25%;margin: 4%;float: left;}
 			#content #logo_info{float: left;width: 66%;float: left;}
-			#content #logo_info h1{font-size: 2.5vw;margin-top: 8%;margin-left: 3%;float: left;color: #404040;}
-			#content #logo_info h2{font-size: 1vw;background: green;float: left;border-radius: 20px;
+			#content #logo_info h1{font-size: 4vw;margin-top: 8%;margin-left: 3%;float: left;color: #404040;}
+			#content #logo_info h2{font-size: 2.5vw;background: green;float: left;border-radius: 20px;
 									margin-top: 10%;margin-left: 1%;padding: 0% 4%;}
 			#content #logo_info #star{width: 100%;float: left;margin-left: 3%;margin-top: 1%;}
 			#content #logo_info #star img{width: 5%;margin: 3px;}
-			#content #logo_info h3{float: left;color: gray;margin-left: 4%;margin-top: 1%;font-size: 2vw;}
+			#content #logo_info h3{float: left;color: gray;margin-left: 4%;margin-top: 1%;font-size: 3vw;}
 			#content #logo_info #3w{float: left;}
-			#download{float: left;width: 100%;background: #008000;cursor: pointer;}
-			#download img{width: 40%;margin-left: 30%;padding: 1% 0;}
-			
+			/*下载按钮宽度布局设置*/
+			#download{float: left;width: 100%;cursor: pointer;}
+			#download img{width: 100%;}
+			/*更多信息部分布局设置*/
 			#show_more{width: 100%;float: left;overflow: hidden;}
-			#show_more #img_ul{width: 400%;float: left;}
-			#show_more #img_ul img{width: 15%;}
+			#show_more #img_ul{width: 500%;float: left;}
+			#show_more #img_ul li{float: left;}
+			#show_more #img_ul li img{width: 100%;}
 			#show_more .conteng_ul{width: 100%;float: left;margin-top: 3%;}
 			#show_more .conteng_ul li{float: left;width: 100%;}
 			#show_more .conteng_ul li img{float: left;margin-top: 1%;margin-right: 2%;width: 3%;}
-			#show_more .conteng_ul li p{font-size: 2vw;color: #404040;float: left;}
-			#show_more #tese{width: 100%;background: #ccc;float: left;font-size: 2vw;margin: 2% 0;}
+			#show_more .conteng_ul li p{font-size: 3vw;color: #404040;float: left;}
+			#show_more #tese{width: 100%;background: #ccc;float: left;font-size: 4vw;margin: 2% 0;}
 			#show_more #tese h3{color: #404040;padding: 3%;text-shadow: #fff 1px 1px;}
-			
+			/*foot布局宽度设置*/
 			#foot{width: 100%;background: #404040;float: left;margin-top: 3%;}
-			#foot p{text-align: center;font-size: 1.5vw;padding: 2% 0;}
+			#foot p{text-align: center;font-size: 2.5vw;padding: 2% 0;}
 		</style>
 	</head>
 	<body>
+		<!--wrapper整体开始-->
 		<div id="wrapper">
+			<!--头部内容开始-->
 			<div id="top"><img src="img/btn_back.jpg"/><h1>游戏介绍</h1></div>
+			<!--头部内容结束-->
+			<!--内容区域开始-->
 			<div id="content">
+				<!--产品信息介绍开始-->
 				<div id="shop_show">
 					<img src="img/qpby_v2.jpg"/>
 					<div id="logo_info">
-						<h1>夺宝捕鱼（赢iPhone6S）</h1><h2>39MB</h2>
+						<h1>夺宝捕鱼</h1><h2>39MB</h2>
 						<div id="star"><img src="img/start.jpg"/><img src="img/start.jpg"/><img src="img/start.jpg"/><img src="img/start.jpg"/><img src="img/start.jpg"/></div>
 						<h3>已有70万+人下载</h3>
 						<div id="3w"></div>
 					</div>
 				</div>
+				<!--产品信息结束-->
+				<!--下载按钮开始-->
 				<div id="download"><img src="img/img_download.jpg"/></div>
+				<!--下载按钮结束-->
+				<!--产品更多介绍开始-->
 				<div id="show_more">
-					<ul id="img_ul">
-						<img src="img/wwby_01_v1.jpg"/>
-						<img src="img/wwby_01_v1.jpg"/>
-						<img src="img/wwby_01_v1.jpg"/>
-						<img src="img/wwby_01_v1.jpg"/>
-					</ul>
+					<div>
+						<ul id="img_ul">
+							<li><img src="img/wwby_01_v1.jpg"/></li>
+							<li><img src="img/wwby_02_v1.jpg"/></li>
+							<li><img src="img/wwby_03_v1.jpg"/></li>
+							<li><img src="img/wwby_04_v1.jpg"/></li>
+						</ul>
+					</div>
 					<ul class="conteng_ul">
 						<li><img src="img/yuan_list.jpg"/><p>注册就送2张夺宝卡</p></li>
 						<li><img src="img/yuan_list.jpg"/><p>注册就送2张夺宝卡</p></li>
@@ -81,8 +122,11 @@
 						<li><img src="img/yuan_list.jpg"/><p>注册就送2张夺宝卡</p></li>
 					</ul>
 				</div>
+				<!--产品更多介绍结束-->
 			</div>
+			<!--foot信息开始-->
 			<div id="foot"><p>粤ICP备14093216号-1 <br /> Copyright©2016 广州动享网络科技有限公司所有</p></div>
+			<!--foot信息结束-->
 		</div>
 	</body>
 </html>
